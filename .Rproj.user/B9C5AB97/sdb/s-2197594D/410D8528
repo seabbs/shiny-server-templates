@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Instruct Shiny Server to run applications as the user $\nrun_as shiny;\n\n# Define a server that listens on port 3838\nserver {\n  listen 3838;\n\n  # Define a location at the base URL\n  location / {\n\n    # Set up simple scheduler\n    simple_scheduler 15;\n\n    # Host the directory of Shiny Apps stored in this di$\n    site_dir /srv/shiny-server;\n\n    # set up google analytics\n    google_analytics_id UA-85604924-2;\n\n    # Log all Shiny output to files in this directory\n    log_dir /var/log/shiny-server;\n    # html templates\n    template_dir /etc/shiny-server/templates;\n\n    # When a user visits the base URL rather than a part$\n    # an index of the applications available in this dir$\n    directory_index on;\n  }\n}\n\n\n",
+    "created" : 1497305075932.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3060567948",
+    "id" : "410D8528",
+    "lastKnownWriteTime" : 1497305088,
+    "last_content_update" : 1497305088260,
+    "path" : "~/Dropbox/Personal/shiny-server-templates/shiny-server.conf",
+    "project_path" : "shiny-server.conf",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}
