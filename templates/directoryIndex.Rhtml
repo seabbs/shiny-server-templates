@@ -12,189 +12,7 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto" />
   <link rel="stylesheet" href=".css/index.css" />
-<style>
 
-  .in-iframe #learn-more-link {
-    display: none;
-  }
-  body, html {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  a {
-    text-decoration: none;
-    color: #1E6DE8;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  pre, tt, code, .code, #detail {
-    font-family: 'Source Code Pro', monospace;
-  }
-  h1 {
-    font-size: 40px;
-  }
-  a {
-    text-decoration: none;
-  }
-  #header {
-  background: #fff;
-  text-align: center;
-}
-  #title {
-    margin: 0;
-    padding-top: 30px;
-    margin-bottom: -10px;
-    font-size: 70px;
-  }
-  #subtitle  {
-    font-size: 45px;
-  }
-  #links {
-    font-size: 20px;
-  }
-  #links .link {
-    margin: 3px 0;
-  }
-  #aboutme-section {
-  max-width: 910px;
-  margin: 35px auto 50px;
-  font-size: 21px;
-}
-  #aboutme-section .about-text {
-    text-align: left;
-    position: relative;
-    padding-left: 45px;
-    padding-right: 5px;
-  }
-  #aboutme-section .about-text strong {
-    font-weight: 600;
-  }
-  #aboutme-section .about-text .fa {
-    position: absolute;
-    left: 5px;
-    top: 5px;
-  }
-  #shinyapps-big {
-  overflow:hidden;
-}
-  #shinyapps-big .shinyapp {
-    color: #3d3852;
-    margin: 0 30px 60px;
-    background: #fff;
-    transition: all 250ms;
-    text-align: left;
-    box-shadow: 0 0 20px #ccc;
-    border: 1px solid #eee;
-  }
-  #shinyapps-big .shinyapp:hover {
-    box-shadow: 0 0 20px #666;
-    background: #f2f6f9;
-    border-color: #aaa;
-  }
-  #shinyapps-big .shinyapp .apptitle {
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 15px;
-  }
-  #shinyapps-big .shinyapp .appimg {
-    width: 100%;
-    cursor: pointer;
-    border-bottom: 1px solid #eee;
-  }
-  #shinyapps-big .applink {
-    color: inherit;
-    display: block;
-    text-decoration: none !important;
-  }
-  #shinyapps-big .shinyapp .appdesc {
-    padding: 0 15px 15px;
-    font-size: 16px;
-    line-height: 1.5em;
-  }
-  @media only screen and (max-width: 1179px) {
-  #services .service {
-    width: 300px;
-    padding: 10px 5px;
-  }
-}
-  @media only screen and (max-width: 999px) {
-  #services .service {
-    width: 180px;
-    font-size: 18px;
-  }
-}
-  @media only screen and (max-width: 650px) {
-  #services .service {
-    display: block;
-    width: auto;
-    margin: 0 auto;
-  }
-  #services {
-    padding: 15px 0;
-  }
-  #portfolio-title {
-    font-size: 28px;
-  }
-}
-  @media only screen and (min-width: 751px) {
-  #title {
-    margin-left: -175px;
-    margin-bottom: -30px;
-  }
-  #subtitle {
-    margin-left: 175px;
-  }
-}
-  @media only screen and (max-width: 750px) {
-  #title {
-    font-size: 40px;
-  }
-  #subtitle {
-    font-size: 30px;
-  }
-  #titleBar {
-    padding-bottom: 15px;
-  }
-  #links {
-    font-size: 17px;
-  }
-}
-#shinyapps-big[data-columns]::before {
-	content: '3 .grid-col.size-1of3';
-}
-@media only screen and (max-width: 650px) {
-  #shinyapps-big .shinyapp {
-    margin:0 15px 30px;
-  }
-  #shinyapps-big[data-columns]::before {
-    content: '2 .grid-col.size-1of2';
-  }
-}
-@media only screen and (max-width: 500px) {
-  #shinyapps-big[data-columns]::before {
-    content: '1 .grid-col.size-1of1';
-  }
-}
-  .grid-col {
-    display: inline-block;
-    vertical-align: top;
-    max-width: 450px;
-  }
-  .size-1of3 {
-    width: 33.333%;
-  }
-  .size-1of2 {
-    width: 50%;
-  }
-  .size-1of1 {
-    width: 100%;
-  }
-
-</style>
   <script>
     if (location.search.indexOf("iframe") > -1) {
       document.documentElement.className += " in-iframe";
@@ -231,6 +49,21 @@
       </p>
     </div>
   </div>
+
+<ul>
+ <div id="shinyapps-big" data-columns>
+  {{#each apps}}
+        <div class="shinyapp">
+          <a class="applink" href="{{this.url}}">
+            <div class="apptitle">
+              {{this.name}}
+            </div>
+          </a>
+        </div>
+        
+  </div>
+    {{/each}}
+</ul>
 
 <ul>
   {{#each apps}}
